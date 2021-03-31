@@ -1,0 +1,203 @@
+.numbers {
+  $this: &;
+
+  //MOBILE VARS
+  $paddTop: 53;
+  $paddRight: 0;
+  $paddBottom: 60;
+  $paddLeft: 0;
+  $contentWidthMob: 375 - ($paddLeft + $paddRight);
+
+  //DESKTOP VARS
+  $paddTopDesk: 113;
+  $paddRightDesk: ($basePadding + (428 - $basePadding));
+  $paddBottomDesk: 104;
+  $paddLeftDesk: ($basePadding + (453 - $basePadding));
+  $contentWidthDesk: 1920 - ($paddLeftDesk + $paddRightDesk);
+
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  background: #e8c7a6;
+  font-style: normal;
+  justify-content: center;
+
+  @include paddingCount($paddTop, $paddRight, $paddBottom, $paddLeft);
+
+  @include tablet {
+    @include paddingCount(
+      $paddTop * 1.2,
+      $basePaddTablet * 2,
+      $paddBottom * 1.2,
+      $basePaddTablet * 2
+    );
+  }
+
+  @include desktop {
+    align-items: unset;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    @include paddingCount(
+      $paddTopDesk,
+      $paddRightDesk,
+      $paddBottomDesk,
+      $paddLeftDesk
+    );
+  }
+
+  #{$this}__el {
+    flex: 0 0 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include tablet {
+      flex: 0 0 50%;
+      justify-content: center;
+      text-align: center;
+    }
+
+    @include desktop {
+      flex: unset;
+    }
+
+    &--1 {
+      word-break: keep-all;
+      flex: 0 0 100%;
+
+      @include tablet {
+        flex: 0 0 50%;
+      }
+
+      @include desktop {
+        max-width: (141% / ($contentWidthDesk * 0.01));
+      }
+    }
+
+    &--2 {
+      max-width: 100%;
+      margin-top: (48vw / 3.75);
+
+      @include tablet {
+        margin-top: unset;
+      }
+
+      @include desktop {
+        max-width: (114% / ($contentWidthDesk * 0.01));
+        margin-top: unset;
+      }
+    }
+
+    &--3 {
+      max-width: 100%;
+      margin-top: (58vw / 3.75);
+
+      @include tablet {
+        margin-top: (80vw / 7.68);
+      }
+
+      @include desktop {
+        max-width: (139% / ($contentWidthDesk * 0.01));
+        margin-top: unset;
+      }
+    }
+
+    &--4 {
+      max-width: 100%;
+      margin-top: (70vw / 3.75);
+
+      @include tablet {
+        margin-top: (80vw / 7.68);
+      }
+
+      @include desktop {
+        max-width: (140% / ($contentWidthDesk * 0.01));
+        margin-top: unset;
+      }
+    }
+
+    #{$this}__count {
+      flex: 0 0 100%;
+      font-weight: 300;
+      display: flex;
+      height: (21vw / 3.75);
+      line-height: (21vw / 3.75);
+      height: (21vw / 3.75);
+      font-size: (23vw / 3.75);
+      justify-content: center;
+      letter-spacing: (12vw / 3.75);
+      padding-left: (12vw / 3.75);
+      font-family: "Open-Sans", sans-serif;
+
+      @include tablet {
+        letter-spacing: (12vw / 7.68);
+        padding-left: (12vw / 7.68);
+        font-size: (23vw / 7.68);
+      }
+
+      @include desktop {
+        margin-top: unset;
+        line-height: (34vw / 19.2) * 1.4;
+        max-height: (34vw / 19.2) * 1.4;
+        font-size: (34vw / 19.2) * 1.4;
+        letter-spacing: (22vw / 19.2) * 1.4;
+        padding-left: (22vw / 19.2) * 1.4;
+        text-align: center;
+      }
+
+      @include biggerDesktop {
+        line-height: (34vw / 19.2);
+        max-height: (34vw / 19.2);
+        font-size: (34vw / 19.2);
+        letter-spacing: (22vw / 19.2);
+        padding-left: (22vw / 19.2);
+      }
+    }
+
+    #{$this}__text {
+      flex: 0 0 100%;
+      font-weight: 300;
+      display: flex;
+      height: (10vw / 3.75);
+      margin-top: (10vw / 3.75);
+      line-height: (10vw / 3.75);
+      height: (10vw / 3.75);
+      font-size: (14vw / 3.75);
+      justify-content: center;
+      letter-spacing: (1vw / 3.75);
+      padding-left: (1vw / 3.75);
+      font-family: "Open-Sans", sans-serif;
+
+      @include tablet {
+        font-size: (14vw / 7.68);
+        margin-top: (10vw / 7.68);
+      }
+
+      @include desktop {
+        flex: unset;
+        font-size: (10vw / 19.2) * 1.4;
+        justify-content: center;
+        margin-top: unset;
+        max-height: (10vw / 19.2) * 1.4;
+        line-height: (10vw / 19.2) * 1.4;
+        margin-top: (31vw / 19.2) * 1.4;
+        text-align: center;
+        letter-spacing: (3.5vw / 19.2) * 1.4;
+        padding-left: (3.5vw / 19.2) * 1.4;
+        min-width: (114vw/19.2) * 1.4;
+        max-width: (114vw/19.2) * 1.4;
+      }
+
+      @include biggerDesktop {
+        font-size: (10vw / 19.2);
+        max-height: (10vw / 19.2);
+        line-height: (10vw / 19.2);
+        margin-top: (31vw / 19.2);
+        letter-spacing: (3.5vw / 19.2);
+        padding-left: (3.5vw / 19.2);
+        min-width: (114vw/19.2);
+        max-width: (114vw/19.2);
+      }
+    }
+  }
+}

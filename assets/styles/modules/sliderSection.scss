@@ -1,0 +1,377 @@
+.sliderSection {
+  $this: &;
+
+  //MOBILE VARS
+  $paddTop: 1;
+  $paddRight: 29;
+  $paddBottom: 57;
+  $paddLeft: 22;
+  $contentWidthMob: 375 - ($paddLeft + $paddRight);
+
+  //DESKTOP VARS
+  $paddTopDesk: 99;
+  $paddRightDesk: ($basePadding + (406 - $basePadding));
+  $paddBottomDesk: 184;
+  $paddLeftDesk: ($basePadding + (404 - $basePadding));
+  $contentWidthDesk: 1920 - ($paddLeftDesk + $paddRightDesk);
+
+  padding: ($paddTop / 3.75 * 1%) ($paddRight / 3.75 * 1%)
+    ($paddBottom / 3.75 * 1%) ($paddLeft / 3.75 * 1%);
+  background-color: #f6d3c3;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: (81vw / 3.75);
+  overflow-x: hidden;
+
+  @include tablet {
+    justify-content: center;
+    @include paddingCount(
+      $paddTopDesk / 1.5,
+      $basePaddTablet,
+      $paddBottomDesk / 1.5,
+      $basePaddTablet
+    );
+    margin-top: (132.3vw / 7.68);
+  }
+
+  @include desktop {
+    justify-content: space-between;
+    margin-top: (51vw / 19.2);
+    @include paddingCount(
+      $paddTopDesk,
+      $paddRightDesk,
+      $paddBottomDesk,
+      $paddLeftDesk
+    );
+  }
+
+  &__slider {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    flex: 0 0 100%;
+
+    @include tablet {
+      flex: 0 0 55%;
+    }
+
+    @include desktop {
+      flex: 0 0 (580% / ($contentWidthDesk * 0.01));
+      order: 2;
+    }
+
+    &::before {
+      content: "";
+      top: 0;
+      left: 0;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(
+        to right,
+        rgba(0, 0, 255, 0) 95%,
+        #f6d3c3 100%
+      );
+      z-index: 1;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    &::after {
+      content: "";
+      top: 0;
+      left: 0;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(to right, #f6d3c3 0%, rgba(0, 0, 255, 0) 15%);
+      z-index: 1;
+
+      @include tablet {
+        display: none;
+      }
+    }
+
+    #{$this}__imagesContainer {
+      align-items: flex-end;
+      display: flex;
+      flex-wrap: nowrap;
+      flex: 0 0 100%;
+      justify-content: center;
+      overflow-x: hidden;
+
+      @include desktop {
+        align-items: center;
+        flex: 0 0 (515vw / 19.2);
+        justify-content: unset;
+        left: (34% / 5.8);
+        position: relative;
+      }
+
+      #{$this}__imagesSlidingRow {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: flex-end;
+
+        &--position1 {
+          @include transform(translateX(0%));
+          transition: 1s transform;
+        }
+
+        &--position2 {
+          @include transform(translateX(-100%));
+          transition: 1s transform;
+        }
+
+        &--position3 {
+          @include transform(translateX(-200%));
+          transition: 1s transform;
+        }
+
+        &--position4 {
+          @include transform(translateX(-300%));
+          transition: 1s transform;
+        }
+
+        #{$this}__imgWrapper {
+          align-items: flex-end;
+          flex: 0 0 100%;
+          display: flex;
+          justify-content: center;
+
+          img {
+            width: (213vw / 3.75);
+            height: auto;
+
+            @include desktop {
+              width: unset;
+              width: (487vw / 19.2);
+            }
+          }
+
+          @include desktop {
+            flex: 1 0 (487% / 5.15);
+            margin-right: ((515% - 487) / 5.15);
+          }
+        }
+      }
+    }
+
+    #{$this}__sliderNav {
+      position: relative;
+      display: flex;
+      flex: 0 0 100%;
+      justify-content: center;
+      z-index: 2;
+
+      #{$this}__sliderBtn {
+        background: url("../images/Ellipse-inactive.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        height: (5vw / 3.75);
+        width: (5vw / 3.75);
+        margin: (18vw / 3.75) (3vw / 3.75) 0 (3vw / 3.75);
+
+        @include tablet {
+          height: (11vw / 7.68);
+          margin: (45% / 5.8) * 1.5 ((13% / 2) * 1.5 / 5.8) * 1.5 0
+            ((13% / 2) * 1.5 / 5.8);
+          padding-top: (11% / 5.8);
+          width: (11vw / 7.68);
+        }
+
+        @include desktop {
+          height: (11vw / 19.2);
+          margin: (45% / 5.8) ((13% / 2) / 5.8) 0 ((13% / 2) / 5.8);
+          padding-top: (11% / 5.8);
+          width: (11vw / 19.2);
+        }
+
+        &--activeBtn {
+          background: url("../images/Ellipse-active.png");
+          background-size: 100% 100%;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    #{$this}__arrow {
+      cursor: pointer;
+      display: block;
+      height: (13vw / 3.75);
+      top: (100vw / 3.75);
+      width: (17vw / 3.75);
+      position: absolute;
+      transition: 0.3s opacity;
+      z-index: 2;
+
+      @include tablet {
+        height: (13vw / 3.75) * 0.7;
+        top: (100vw / 3.75) * 0.7;
+        width: (17vw / 3.75) * 0.7;
+      }
+
+      @include desktop {
+        height: 1.3vw;
+        top: (229% / 4.976);
+        width: 2.13vw;
+      }
+
+      &:active {
+        opacity: 0.5;
+        transition: 0.3s;
+      }
+
+      &--left {
+        background: url("../images/left-arrow.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        left: 0;
+      }
+
+      &--right {
+        background: url("../images/right-arrow.png");
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        right: 0;
+      }
+    }
+  }
+
+  &__textDiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 80%;
+
+    @include tablet {
+      align-content: flex-start;
+      flex: 0 0 100%;
+      justify-content: center;
+    }
+
+    @include desktop {
+      justify-content: unset;
+      flex: 0 0 ((467% + 59) / ($contentWidthDesk * 0.01));
+    }
+
+    & h1 {
+      margin-left: (57vw / 3.75);
+      font-size: (29vw / 3.75);
+      text-align: center;
+      max-width: (217vw / 3.75);
+      margin-top: (15vw / 3.75);
+
+      @include tablet {
+        font-size: (50vw / 7.68);
+        line-height: (116vw / 7.68 / 2);
+        min-height: (116vw / 7.68) * 0.7;
+        margin-top: (113vw / 7.68) * 0.3;
+        margin-left: unset;
+        width: (359% / 5.26);
+        padding: 0;
+      }
+
+      @include desktop {
+        font-size: (50vw / 19.2);
+        line-height: (116vw / 19.2 / 2);
+        min-height: (116vw / 19.2);
+        margin-top: (113% / 5.26);
+        margin-left: (2% / 5.26);
+        text-align: unset;
+        padding: 0;
+        width: (359% / 5.26);
+      }
+    }
+
+    & p {
+      font-size: (12vw / 3.75);
+      margin-left: (50vw / 3.75);
+      text-align: center;
+      max-width: (232vw / 3.75);
+      margin-top: (26vw / 3.75);
+
+      @include tablet {
+        font-size: (15vw / 7.68) * 1.1;
+        line-height: (66 / 7.68 / 3) * 0.7;
+        min-height: (66 / 7.68) * 0.7;
+        margin-top: (37vw / 7.68) * 0.7;
+        margin-left: (4vw / 7.68) * 0.7;
+        min-width: 85%;
+      }
+
+      @include desktop {
+        font-size: (15vw / 19.2) * 1.2;
+        line-height: (66 / 19.2 / 2) * 1.2;
+        min-height: (66 / 19.2) * 1.2;
+        margin-top: (37% / 5.26);
+        margin-left: (4% / 5.26);
+        min-width: unset;
+        text-align: left;
+        width: (467% / 5.26);
+      }
+
+      @include biggerDesktop {
+        font-size: (15vw / 19.2);
+        line-height: (66 / 19.2 / 2);
+        min-height: (66 / 19.2);
+      }
+
+      & span {
+        display: none;
+
+        @include tablet {
+          display: inline;
+        }
+
+        @include desktop {
+          display: inline;
+        }
+      }
+    }
+
+    #{$this}__btn {
+      background-color: #779bc8;
+      border-radius: (20vw / 3.75);
+      cursor: pointer;
+      color: #ffffff;
+      font-size: (12vw / 3.75);
+      margin-left: (113vw / 3.75);
+      font-weight: 700;
+      margin-top: (37vw / 3.75);
+      height: (43vw / 3.75);
+      width: (105vw / 3.75);
+      transition: 0.3s;
+
+      @include tablet {
+        border-radius: (26vw / 19.2) * 2.7;
+        font-size: 0.83vw * 2.7;
+        height: 2.65vw * 2.7;
+        margin-top: (48% / 7.68);
+        margin-left: unset;
+        width: 6.66vw * 2.7;
+      }
+
+      @include desktop {
+        border-radius: (26vw / 19.2);
+        color: #ffffff;
+        font-size: 0.83vw;
+        height: 2.65vw;
+        margin-top: (48% / 5.26);
+        width: 6.66vw;
+      }
+
+      &:active {
+        transition: 0.3s;
+        // filter: (alpha(0.5));
+      }
+
+      &:hover {
+        transition: 0.3s;
+        opacity: 0.8;
+      }
+    }
+  }
+}

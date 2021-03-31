@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "Business development",
+    "mobileSrc": "./assets/images/mobile/Slide 1@1X.png",
+    "desktopSrc": "./assets/images/Slide 1@1X.png"
+  },
+  {
+    "id": 2,
+    "name": "Constructive thinking",
+    "mobileSrc": "./assets/images/mobile/Slide 2@1X.png",
+    "desktopSrc": "./assets/images/Slide 2@1X.png"
+  },
+  {
+    "id": 3,
+    "name": "Work strategy",
+    "mobileSrc": "./assets/images/mobile/Slide 3@1X.png",
+    "desktopSrc": "./assets/images/Slide 3@1X.png"
+  },
+  {
+    "id": 4,
+    "name": "Team spirit",
+    "mobileSrc": "./assets/images/mobile/Slide 4@1X.png",
+    "desktopSrc": "./assets/images/Slide 4@1X.png"
+  }
+]

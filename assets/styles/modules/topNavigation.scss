@@ -1,0 +1,70 @@
+.topNavigation {
+  $this: &;
+
+  //PADDING VARS
+  $paddTop: 43;
+  $paddRight: ($basePadding + (413 - $basePadding));
+  $paddBottom: 41;
+  $paddLeft: ($basePadding + (403 - $basePadding));
+  $contentWidth: 1920 - ($paddLeft + $paddRight);
+
+  background: #7799bb;
+
+  > :first-child {
+    display: none;
+
+    @include desktop {
+      display: flex;
+    }
+  }
+
+  @include tablet {
+    display: block;
+  }
+
+  @include desktop {
+    @include paddingCount($paddTop, $paddRight, $paddBottom, $paddLeft);
+  }
+
+  &__contenWrapper {
+    display: none;
+
+    @include desktop {
+      align-items: center;
+      display: flex;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif normal;
+      font-style: normal;
+      font-size: (14vw / 19.2) * 1.4;
+      font-weight: 400;
+      justify-content: flex-end;
+      height: (15vw / 19.2) * 1.4;
+      line-height: (15vw / 19.2) * 1.4;
+      height: (15vw / 19.2) * 1.4;
+    }
+
+    @include biggerDesktop {
+      font-size: (14vw / 19.2);
+      height: (15vw / 19.2);
+    }
+
+    & img {
+      height: 100%;
+      margin-right: (7vw / 19.2);
+    }
+
+    #{$this}__adress {
+      margin-right: auto;
+      height: 100%;
+    }
+
+    #{$this}__hotLine {
+      margin-right: (22% / 11.13);
+      height: 100%;
+    }
+
+    #{$this}__openHours {
+      height: 100%;
+    }
+  }
+}

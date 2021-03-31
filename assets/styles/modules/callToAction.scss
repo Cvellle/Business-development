@@ -1,0 +1,106 @@
+.callToAction {
+  $this: &;
+
+  //MOBILE VARS
+  $paddTop: 32;
+  $paddRight: 97;
+  $paddBottom: 23;
+  $paddLeft: 96;
+  $contentWidth: 375 - ($paddLeft + $paddRight);
+
+  //DESKTOP VARS
+  $paddTopDesk: 21;
+  $paddRightDesk: ($basePadding + (645 - $basePadding));
+  $paddBottomDesk: 17;
+  $paddLeftDesk: ($basePadding + (497 - $basePadding));
+  $contentWidthDesk: 1920 - ($paddLeftDesk + $paddRightDesk);
+
+  background-color: #f5b490;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include paddingCount($paddTop, $paddRight, $paddBottom, $paddLeft);
+
+  @include tablet {
+    @include paddingCount(
+      $paddTop * 1.8,
+      ((768 - 586) / 2),
+      $paddBottom * 2.3,
+      ((768 - 586) / 2)
+    );
+  }
+
+  @include desktop {
+    @include paddingCount(
+      $paddTopDesk,
+      $paddRightDesk,
+      $paddBottomDesk,
+      $paddLeftDesk
+    );
+  }
+
+  &__conentWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+
+    @include tablet {
+      justify-content: space-between;
+    }
+
+    @include desktop {
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #{$this}__text {
+      color: #ffffff;
+      font-size: (14vw / 3.75);
+      max-width: (183vw / 3.75);
+      text-align: center;
+      font-weight: 700;
+
+      @include tablet {
+        font-size: (25vw / 7.68);
+        text-align: left;
+      }
+
+      @include desktop {
+        font-size: 1.093vw;
+        line-height: 1.093vw;
+      }
+    }
+
+    #{$this}__btn {
+      background-color: #ffffff;
+      color: #36a2f4;
+      padding: 0;
+      height: (56vw / 3.75);
+      margin-top: (28vw / 3.75);
+      transition: 0.5s background-color;
+      width: (153vw / 3.75);
+
+      @include tablet {
+        font-size: (20vw / 7.68);
+        height: (60vw / 7.68);
+        width: (153vw / 7.68);
+        margin-top: unset;
+      }
+
+      @include desktop {
+        cursor: pointer;
+        font-size: 0.781vw;
+        font-weight: 700;
+        height: 2.656vw;
+        margin-top: unset;
+        width: 7.343vw;
+
+        &:hover {
+          background-color: rgb(238, 238, 238);
+          transition: 0.5s;
+        }
+      }
+    }
+  }
+}

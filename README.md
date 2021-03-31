@@ -1,4 +1,3 @@
-Vanila JavaScript
-SCSS
-semantic HTML 
-BEM
+Webpack
+
+Sass

@@ -1,0 +1,350 @@
+.ourWork {
+  $this: &;
+
+  //MOBILE VARS
+  $paddTop: 67 / 2;
+  $paddRight: 51;
+  $paddBottom: 80 / 2;
+  $paddLeft: 52;
+  $contentWidthMob: 375 - ($paddLeft + $paddRight);
+
+  //DESKTOP VARS
+  $paddTopDesk: 169 / 2;
+  $paddRightDesk: ($basePadding + (468 - $basePadding));
+  $paddBottomDesk: 188 / 2;
+  $paddLeftDesk: ($basePadding + (505 - $basePadding));
+  $contentWidthDesk: 1920 - ($paddLeftDesk + $paddRightDesk);
+
+  @include paddingCount($paddTop, $paddRight, $paddBottom, $paddLeft);
+
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 100%;
+  justify-content: center;
+
+  @include tablet {
+    align-content: flex-start;
+    @include paddingCount(
+      $paddTopDesk / 1.3,
+      $basePaddTablet,
+      $paddBottomDesk / 1.3,
+      $basePaddTablet
+    );
+  }
+
+  @include desktop {
+    @include paddingCount(
+      $paddTopDesk,
+      $paddRightDesk,
+      $paddBottomDesk,
+      $paddLeftDesk
+    );
+  }
+
+  #{$this}__titlesGroup {
+    align-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include desktop {
+      justify-content: flex-start;
+    }
+
+    & h2 {
+      display: flex;
+      flex: 0 0 (190vw / 3.75);
+      font-size: (21.2vw / 3.75);
+      max-width: (190w / 3.75);
+
+      @include tablet {
+        font-size: (51.5vw / 7.68) * 0.7; // fits
+        font-weight: 700;
+        height: (5vw * 2);
+        margin-top: unset;
+        line-height: 5vw;
+        justify-content: center;
+      }
+
+      @include desktop {
+        font-size: (51.5vw / 19.2); // fits
+        font-weight: 700;
+        height: (36vw /19.2);
+        margin-top: unset;
+        margin-left: (65% / ($contentWidthDesk * 0.01));
+        justify-content: unset;
+        line-height: 1.875vw;
+      }
+
+      span {
+        width: unset;
+        display: inline;
+        justify-content: center;
+        text-align: center;
+
+        & > strong {
+          color: #8a5b9d;
+        }
+      }
+    }
+
+    & h3 {
+      font-size: (11vw / 3.75);
+      flex: 0 0 100%;
+      display: flex;
+      margin-top: (28vw / 3.75);
+      line-height: ((29vw / 2) / 3.75);
+      text-align: justify;
+      -moz-text-align-last: center;
+      text-align-last: center;
+      max-width: 41.197vw;
+      min-width: 100%;
+      word-break: keep-all;
+
+      @include tablet {
+        font-size: (11vw / 7.68) * 2;
+        margin-top: (20% / ($contentWidthMob * 0.01));
+        justify-content: center;
+      }
+
+      span {
+        max-width: 70vw;
+        text-align: center;
+
+        @include desktop {
+          text-align: unset;
+          max-width: unset;
+        }
+      }
+
+      @include desktop {
+        font-size: (17vw / 19.2) * 1.2;
+        font-weight: 400;
+        height: (49vw / 19.2) * 1.2;
+        line-height: ((49vw / 2) / 19.2) * 1.2;
+        margin-top: (90% / ($contentWidthDesk * 0.01));
+        margin-left: (70% / ($contentWidthDesk * 0.01));
+        margin-bottom: unset;
+        min-width: unset;
+        justify-content: unset;
+      }
+
+      @include biggerDesktop {
+        font-size: (17vw / 19.2);
+        height: (49vw / 19.2);
+        line-height: ((49vw / 2) / 19.2);
+      }
+    }
+
+    #{$this}__hideOnMob {
+      display: none;
+
+      @include desktop {
+        display: inline;
+      }
+    }
+
+    #{$this}__break {
+      @include desktop {
+        display: none;
+      }
+    }
+  }
+
+  &__article {
+    display: flex;
+    flex: 1 0 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include tablet {
+      flex: 0 0 33%;
+    }
+
+    @include desktop {
+      font-size: 0.78vw;
+      flex: 0 (243% / ($contentWidthDesk * 0.01));
+    }
+
+    &--1 {
+      margin-top: (37vw / 3.75);
+
+      @include tablet {
+        margin-top: (37vw / 6.78);
+      }
+
+      @include desktop {
+        margin-top: 3.177vw;
+      }
+    }
+
+    &--2 {
+      margin-top: (40vw / 3.75);
+
+      @include tablet {
+        margin-top: (37vw / 6.78);
+      }
+
+      @include desktop {
+        margin-top: 3.177vw;
+        margin-left: (110% / ($contentWidthDesk * 0.01));
+      }
+    }
+
+    &--3 {
+      margin-top: (38vw / 3.75);
+
+      @include tablet {
+        margin-top: (37vw / 6.78);
+      }
+
+      @include desktop {
+        margin-top: 3.177vw;
+        margin-left: (108% / ($contentWidthDesk * 0.01));
+      }
+    }
+
+    #{$this}__imageWrapper {
+      position: relative;
+      height: (49vw / 3.75);
+      width: (49vw / 3.75);
+
+      @include desktop {
+        margin-top: 3.177vw;
+        height: 4.63vw;
+        width: 4.63vw;
+      }
+
+      img {
+        position: relative;
+        z-index: 1;
+        min-width: 100%;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        border-radius: 50%;
+        min-width: 100%;
+        min-height: 100%;
+        z-index: 0;
+      }
+
+      &--audience {
+        @include desktop {
+        }
+        padding: 0.05vw;
+      }
+
+      &--megaphone {
+        & img {
+          padding: (2vw / 3.75) (4vw / 3.75) (3vw / 3.75) (5vw / 3.75);
+
+          @include desktop {
+            padding: 0.23vw 0.41vw;
+          }
+        }
+
+        &::before {
+          background: #eaf9ff;
+        }
+      }
+
+      &--search {
+        & img {
+          padding: (8vw / 3.75) (5vw / 3.75) (3vw / 3.75) (5vw / 3.75);
+
+          @include desktop {
+            padding: 0.729vw 0.625vw 0.156vw 0.26vw;
+          }
+        }
+
+        &::before {
+          background: #aedbf0;
+        }
+      }
+    }
+
+    & h4 {
+      font-size: 2.6vw;
+      flex: 1 0 100%;
+      font-size: (12vw / 3.75);
+      font-weight: 700;
+      text-align: center;
+      margin-top: (17vw / 3.75);
+      -webkit-hyphens: auto;
+      -moz-hyphens: auto;
+      -ms-hyphens: auto;
+      hyphens: auto;
+
+      @include tablet {
+        max-width: 70%;
+      }
+
+      @include desktop {
+        font-size: (20vw /19.2) * 1.2;
+        font-weight: 700;
+        height: 0.885vw * 1.2;
+        margin-top: (35% / 2.43);
+        max-width: unset;
+      }
+
+      @include biggerDesktop {
+        font-size: (20vw /19.2);
+        height: 0.885vw;
+      }
+    }
+
+    & p {
+      flex: 0 100%;
+      font-size: (10vw / 3.75);
+      font-weight: 400;
+      line-height: ((43vw / 3) / 3.75);
+      height: (43vw / 3.75);
+      margin-top: (18vw / 3.75);
+      max-width: (154vw / 3.75);
+      text-align: center;
+
+      @include tablet {
+        font-size: (20vw / 7.68);
+        line-height: ((20vw) / 7.68);
+        margin-top: (18vw / 7.68);
+        height: ((20vw * 5) / 7.68);
+        max-width: 92%;
+      }
+
+      @include desktop {
+        font-size: (16vw /19.2) * 1.2;
+        font-weight: 400;
+        line-height: unset;
+        height: 3.593vw * 1.2;
+        margin-top: (16% / 2.43) * 1.2;
+        max-width: 12.656vw * 1.2;
+        min-width: 115%;
+      }
+
+      @include biggerDesktop {
+        font-size: (16vw /19.2);
+        height: 3.593vw;
+        min-width: unset;
+        margin-top: (16% / 2.43);
+        max-width: 12.656vw;
+      }
+    }
+
+    #{$this}__btn {
+      background-color: #779bc8;
+      border-radius: 3vw;
+      cursor: pointer;
+      color: white;
+      height: 2.65vw;
+      width: 6.66vw;
+
+      @include desktop {
+        font-size: 0.83vw;
+        font-weight: 700;
+        color: #ffffff;
+      }
+    }
+  }
+}

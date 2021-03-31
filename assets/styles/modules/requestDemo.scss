@@ -1,0 +1,195 @@
+.requestDemo {
+  $this: &;
+
+  //MOBILE VARS
+  $paddTop: 54;
+  $paddRight: 22;
+  $paddBottom: 83;
+  $paddLeft: 20;
+  $contentWidth: 375 - ($paddLeft + $paddRight);
+
+  //DESKTOP VARS
+  $paddTopDesk: 124;
+  $paddRightDesk: ($basePadding + (325 - $basePadding));
+  $paddBottomDesk: 118;
+  $paddLeftDesk: ($basePadding + (454 - $basePadding));
+  $contentWidthDesk: 1920 - ($paddLeftDesk + $paddRightDesk);
+
+  display: flex;
+  flex-wrap: wrap;
+  @include paddingCount($paddTop, $paddRight, $paddBottom, $paddLeft);
+
+  @include tablet {
+    @include paddingCount(
+      $paddTop,
+      $basePaddTablet * 2,
+      $paddBottom,
+      $basePaddTablet * 2
+    );
+  }
+
+  @include desktop {
+    @include paddingCount(
+      $paddTopDesk,
+      $paddRightDesk,
+      $paddBottomDesk,
+      $paddLeftDesk
+    );
+  }
+
+  &__conentWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @include desktop {
+      justify-content: space-between;
+    }
+
+    #{$this}__textDiv {
+      display: flex;
+      flex: 0 1 auto;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      @include desktop {
+        flex: 0 1 25vw;
+        font-size: 0.78vw;
+        justify-content: flex-start;
+      }
+
+      & h2 {
+        font-size: (28vw / 3.75);
+        height: (29vw / 3.75);
+        text-align: center;
+        width: 100%;
+        font-weight: 300;
+
+        @include tablet {
+          font-size: (36vw / 7.68);
+          font-weight: 300;
+          height: 2.552vw;
+        }
+
+        @include desktop {
+          font-size: 2.5vw;
+          font-weight: 300;
+          height: 2.552vw;
+          text-align: left;
+        }
+
+        & strong {
+          font-weight: 900;
+        }
+      }
+
+      & h3 {
+        font-size: (15vw / 3.75);
+        height: (15vw / 3.75);
+        font-weight: 700;
+        margin-top: (13vw / 3.75);
+
+        @include desktop {
+          font-size: 1.197vw;
+          font-weight: 700;
+          height: 1.25vw;
+          margin-top: 1.562vw;
+          margin-left: 0.1vw;
+        }
+      }
+    }
+
+    #{$this}__formEl {
+      display: inline-flex;
+      width: 100%;
+
+      @include tablet {
+        height: (82vw / 7.68);
+        margin-top: 7vw;
+        width: (586vw / 7.68);
+      }
+
+      @include desktop {
+        height: (82vw / 19.2);
+        margin-top: 1.77vw;
+        width: (586vw / 19.2);
+      }
+
+      input {
+        background-color: #e4e4de;
+        color: #8081ab;
+        font-size: (13vw / 3.75);
+        padding-left: (17vw / 3.75);
+        height: 100%;
+        margin-top: (39vw / 3.75);
+        padding: 0;
+        transition: 0.5s;
+        font-weight: 800;
+
+        @include tablet {
+          font-size: 2.5vw;
+          margin-top: unset;
+          height: 10vw;
+        }
+
+        @include desktop {
+          font-size: 1.197vw;
+          width: 18.28vw;
+          height: unset;
+        }
+
+        &::placeholder {
+          color: #8081ab;
+        }
+
+        &:-ms-input-placeholder {
+          color: #8081ab;
+        }
+
+        &::-ms-input-placeholder {
+          color: #8081ab;
+        }
+
+        &:focus {
+          outline: 0;
+          opacity: 0.7;
+        }
+      }
+
+      #{$this}__emailInput {
+        padding-left: (17vw / 3.75);
+        flex: 1 0 auto;
+
+        @include desktop {
+          padding-left: (39vw / 19.2);
+        }
+      }
+
+      #{$this}__btn {
+        background-color: #e4e4de;
+        color: #5b5975;
+        height: 100%;
+        padding: 0;
+        transition: 0.5s;
+        width: (122vw / 3.75);
+
+        @include tablet {
+          height: 10vw;
+        }
+
+        @include desktop {
+          cursor: pointer;
+          font-size: 0.781vw;
+          font-weight: 700;
+          height: unset;
+          width: 11.0416vw;
+
+          &:hover {
+            background-color: #cfcfcc;
+            transition: 0.5s;
+          }
+        }
+      }
+    }
+  }
+}

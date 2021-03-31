@@ -1,0 +1,236 @@
+.ourCompany {
+  $this: &;
+
+  //MOBILE VARS
+  $paddTop: 54;
+  $paddRight: 25;
+  $paddBottom: 67 / 2;
+  $paddLeft: 25;
+  $contentWidthMob: 375 - ($paddLeft + $paddRight);
+
+  //DESKTOP VARS
+  $paddTopDesk: 185;
+  $paddRightDesk: ($basePadding + (394 - $basePadding));
+  $paddBottomDesk: 169 / 2;
+  $paddLeftDesk: ($basePadding + (313 - $basePadding));
+  $contentWidthDesk: 1920 - ($paddLeftDesk + $paddRightDesk);
+
+  @include paddingCount($paddTop, $paddRight, $paddBottom, $paddLeft);
+
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 0 100%;
+  justify-content: center;
+
+  @include tablet {
+    justify-content: space-between;
+    @include paddingCount(
+      $paddTopDesk / 1.5,
+      $basePaddTablet,
+      $paddBottomDesk / 1.5,
+      $basePaddTablet
+    );
+  }
+
+  @include desktop {
+    @include paddingCount(
+      $paddTopDesk,
+      $paddRightDesk,
+      $paddBottomDesk,
+      $paddLeftDesk
+    );
+  }
+
+  &__imgWrapper {
+    align-content: flex-start;
+    display: flex;
+    flex: 0 0 (147vw / 3.75);
+    flex-wrap: wrap;
+
+    & img {
+      min-width: 100%;
+    }
+
+    @include tablet {
+      flex: 0 0 47%;
+      order: 1;
+      margin-top: (53vw / 7.68);
+    }
+
+    @include desktop {
+      flex: 0 0 ((586%) / ($contentWidthDesk * 0.01));
+      order: 1;
+      margin-top: unset;
+    }
+  }
+
+  &__textDiv {
+    align-content: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 0 0 100%;
+    justify-content: center;
+
+    @include tablet {
+      font-size: 0.78vw;
+      flex: 0 0 47%;
+      justify-content: unset;
+      order: 1;
+    }
+
+    @include desktop {
+      font-size: 0.78vw;
+      flex: 0 0 (409% / ($contentWidthDesk * 0.01)) * 1.3;
+      justify-content: unset;
+      order: 1;
+    }
+
+    @include biggerDesktop {
+      flex: 0 0 (409% / ($contentWidthDesk * 0.01));
+    }
+
+    #{$this}__titlesGroup {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      & h2 {
+        margin-top: (19vw / 3.75);
+        font-size: (22vw / 3.75);
+        text-align: center;
+        order: 2;
+        width: (168vw / 3.75);
+
+        @include tablet {
+          font-size: (49vw / 19.2); // fits
+          height: (39vw / 7.68) * 0.7;
+          line-height: (39vw / 7.68) * 0.7;
+          font-weight: 700;
+          margin-top: (30% / 4.09);
+          text-align: unset;
+          width: 100%;
+        }
+
+        @include desktop {
+          font-size: (50vw / 19.2); // fits
+          height: (39vw / 19.2);
+          line-height: (39vw / 19.2);
+          font-weight: 700;
+          justify-content: unset;
+          margin-top: (30% / 4.09);
+          text-align: unset;
+          width: 100%;
+        }
+
+        span {
+          color: #f26522;
+        }
+      }
+
+      & h3 {
+        margin-top: (33vw / 3.75);
+        font-size: (14vw / 3.75); // fits
+        text-align: center;
+        width: (255vw / 3.75);
+        order: 1;
+
+        @include tablet {
+          font-size: (20.8vw / 7.68) * 0.7;
+          height: (16vw / 7.68) * 0.7;
+          line-height: (16vw / 7.68) * 0.7;
+          font-weight: 700;
+          margin-top: (33vw / 7.68) * 0.7;
+          text-align: unset;
+          width: 100%;
+        }
+
+        @include desktop {
+          font-size: (20.8vw / 19.2);
+          height: (16vw / 19.2);
+          line-height: (16vw / 19.2);
+          font-weight: 700;
+          margin-top: (65% / 4.09);
+          margin-left: (3% / 4.09);
+          text-align: unset;
+          width: 100%;
+        }
+      }
+    }
+
+    #{$this}__bodyText {
+      font-size: (12vw / 3.75);
+      line-height: (92vw / 6 / 3.75);
+      font-weight: 400;
+      margin-top: (27vw / 3.75);
+      text-align: center;
+      width: 100%;
+
+      @include tablet {
+        font-size: (15vw / 7.68) * 1.05;
+        line-height: (216vw / 7.68 / 9) * 1.05;
+        font-weight: 400;
+        margin-top: (15vw / 7.68);
+        margin-left: (3% / $contentWidthMob);
+        text-align: unset;
+      }
+
+      @include desktop {
+        font-size: (15vw / 19.2) * 1.2;
+        line-height: (216vw / 19.2 / 9) * 1.2;
+        font-weight: 400;
+        margin-top: (56% / 4.09) / 1.4;
+        margin-left: (3% / 4.09);
+        text-align: unset;
+      }
+
+      @include biggerDesktop {
+        font-size: (15vw / 19.2);
+        line-height: (216vw / 19.2 / 9);
+        margin-top: (56% / 4.09);
+      }
+
+      & span {
+        display: none;
+
+        @include desktop {
+          display: inline;
+        }
+      }
+    }
+
+    #{$this}__btn {
+      cursor: pointer;
+      color: #414042;
+      font-size: (16vw / 3.75);
+      margin-top: (36vw / 3.75);
+
+      @include tablet {
+        font-size: (20.5vw / 7.68) * 0.7;
+        font-weight: 700;
+        height: (18% / 4.532);
+        margin-top: (40% / 4.09);
+        transition: 0.5s;
+        width: auto;
+      }
+
+      @include desktop {
+        font-size: (20.5vw / 19.2);
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        height: (18% / 4.532);
+        margin-top: (40% / 4.09);
+        transition: 0.5s;
+        width: (134% / 4.09);
+        padding: (3vw / 19.2);
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      &:hover {
+        color: rgb(177, 174, 174);
+        transition: 0.5s;
+      }
+    }
+  }
+}

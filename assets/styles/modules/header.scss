@@ -1,0 +1,334 @@
+.header {
+  $this: &;
+
+  //MOBILE VARS
+  $paddTopHeader: 0;
+  $paddRightHeader: 22;
+  $paddBottomHeader: 32;
+  $paddLeftHeader: 19;
+  $contentWidthHeader: 375 - ($paddLeftHeader + $paddRightHeader);
+
+  //DESKTOP VARS
+  $paddTopHeaderDesk: 55;
+  $paddRightHeaderDesk: $basePadding-right + 9;
+  $paddBottomHeaderDesk: 0;
+  $paddLeftHeaderDesk: $basePadding-left;
+  $contentWidthHeaderDesk: 1920 - ($paddLeftHeaderDesk + $paddRightHeaderDesk);
+
+  background: white;
+  position: fixed;
+  top: 0;
+  transition: 0.3s;
+  width: 100%;
+  -webkit-backface-visibility: hidden;
+  z-index: 5;
+  @include paddingCount(
+    $paddTopHeader,
+    $paddRightHeader,
+    $paddBottomHeader,
+    $paddLeftHeader
+  );
+
+  @include desktop {
+    @include paddingCount(
+      $paddTopHeaderDesk,
+      $paddRightHeaderDesk,
+      $paddBottomHeaderDesk,
+      $paddLeftHeaderDesk
+    );
+    position: -webkit-sticky;
+    position: sticky;
+    box-shadow: 0px (51vw / 19.2) 0vw white;
+  }
+
+  &--translated {
+    background-color: rgba(255, 255, 255, 0.637);
+
+    @include desktop {
+      background-color: white;
+      transition: 0.3s;
+      box-shadow: 0px (5vw / 19.2) 0vw white;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+
+    @include desktop {
+      height: unset;
+    }
+
+    #{$this}__logoWrapper {
+      align-items: flex-start;
+      display: flex;
+      height: (21vw / 3.75);
+      flex: 0 0 (134vw / 3.75);
+      margin-top: (26vw / 3.75);
+      transition: 0.3s;
+
+      @include desktop {
+        height: 1.45vw * 1.2;
+        flex: 0 0 (269% / 10.98) * 1.2;
+        margin-top: unset;
+      }
+
+      @include biggerDesktop {
+        height: 1.45vw;
+        flex: 0 0 (269% / 10.98);
+        margin-top: unset;
+      }
+
+      &--smaller {
+        @include transform(scale(0.9) translate3d(0, 0, 0));
+        -webkit-transform-style: preserve-3d;
+        -webkit-backface-visibility: hidden;
+        transition: 0.3s;
+
+        @include desktop {
+          @include transform(scale(1) translate3d(0, 0, 0));
+        }
+      }
+    }
+
+    #{$this}__hamburgerBtn {
+      align-content: space-between;
+      display: flex;
+      flex: 0 0 (24vw / 3.75);
+      flex-wrap: wrap;
+      height: (22vw / 3.75);
+      margin-top: (27vw / 3.75);
+      position: relative;
+      z-index: 3;
+
+      @include desktop {
+        display: none;
+      }
+
+      #{$this}__hamburgerLine {
+        display: block;
+        flex: 0 0 100%;
+        height: 20%;
+        background: url("../images/mobile/manuBtnLine.png");
+        border-radius: 5vw;
+        transition: 0.5s;
+
+        &--xModifier1 {
+          @include transform(translate(0%, 200%) rotate(45deg) scale(1.25));
+          transition: 0.5s;
+        }
+
+        &--xModifier2 {
+          opacity: 0;
+          transition: 0.5s opacity;
+        }
+
+        &--xModifier3 {
+          @include transform(translate(0%, -200%) rotate(-45deg) scale(1.25));
+          transition: 0.5s;
+        }
+      }
+    }
+
+    #{$this}__navButtons {
+      align-items: center;
+      align-content: center;
+      display: flex;
+      flex-wrap: wrap;
+      height: 100vh;
+      width: 100vw;
+      background-color: #779bc8d0;
+      justify-content: center;
+      position: absolute;
+      transition: 1s;
+      @include transform(translateX(100vw));
+
+      @include desktop {
+        $navBtnsFlex: $contentWidthHeaderDesk - 269;
+        align-items: flex-start;
+        background-color: unset;
+        flex: 0 0 ((($navBtnsFlex) * 1%) / 10.98);
+        height: unset;
+        position: relative;
+        justify-content: flex-end;
+        width: unset;
+        @include transform(translateX(0%));
+      }
+
+      &--mobileVisible {
+        @include transform(translateX(0vw - (19 / 3.75)));
+        transition: 1s;
+
+        @include tablet {
+          @include transform(translateX(0vw - (19 / 7.68)));
+        }
+      }
+
+      #{$this}__simpleButtonsDiv {
+        width: 100%;
+
+        @include desktop {
+          cursor: pointer;
+          display: flex;
+          transition: 0.3s;
+          margin-top: (13% / 8.29) * 1.2;
+          margin-right: (58% / 8.29);
+          width: (432% / 8.29);
+        }
+
+        @include biggerDesktop {
+          margin-top: (13% / 8.29);
+        }
+      }
+
+      #{$this}__navBtn {
+        align-items: center;
+        display: flex;
+        flex-wrap: wrap;
+        flex: 0 0 100%;
+        justify-content: center;
+
+        @include desktop {
+          flex: unset;
+          height: (13vw / 19.2) * 1.2;
+          line-height: (13vw / 19.2) * 1.2;
+
+          &--2 {
+            margin-left: (49% / 4.32) / 1.2;
+          }
+
+          &--3 {
+            margin-left: (43% / 4.32) / 1.2;
+          }
+
+          &--4 {
+            margin-left: (49% / 4.32) / 1.2;
+          }
+
+          &--5 {
+            margin-left: (37% / 4.32) / 1.2;
+          }
+        }
+
+        @include biggerDesktop {
+          flex: unset;
+          height: (13vw / 19.2);
+          line-height: (13vw / 19.2);
+
+          &--2 {
+            margin-left: (49% / 4.32);
+          }
+
+          &--3 {
+            margin-left: (43% / 4.32);
+          }
+
+          &--4 {
+            margin-left: (49% / 4.32);
+          }
+
+          &--5 {
+            margin-left: (37% / 4.32);
+          }
+        }
+
+        & > a {
+          color: #ffffff;
+          font-weight: 700;
+          font-size: (32vw / 3.75);
+          margin: 3vw 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @include tablet {
+            font-size: (32vw / 7.68);
+            font-weight: 900;
+          }
+
+          @include desktop {
+            color: #24242b;
+            font-size: (13vw / 19.2) * 1.2;
+            font-weight: 900;
+            margin: 0;
+          }
+
+          @include biggerDesktop {
+            font-size: (13vw / 19.2);
+          }
+
+          &:hover {
+            color: #f26522;
+            transition: 0.3s;
+          }
+        }
+
+        &--quote {
+          color: white;
+          cursor: pointer;
+          font-size: (15vw / 3.75);
+          height: (41vw / 19.2);
+          margin-right: (2% / 8.29);
+          padding: 0;
+          width: (181% / 8.29);
+
+          @include tablet {
+            height: (41vw / 7.68);
+          }
+
+          @include desktop {
+            background-color: #f26522;
+            cursor: pointer;
+            font-size: 0.62vw * 1.2;
+            height: (41vw / 19.2) * 1.2;
+            margin-right: (2% / 8.29) / 1.2;
+            padding: 0;
+            width: (181% / 8.29) * 1.2;
+          }
+
+          @include biggerDesktop {
+            font-size: 0.62vw;
+            margin-right: (2% / 8.29);
+            height: (41vw / 19.2);
+            width: (181% / 8.29);
+          }
+
+          & > a {
+            align-items: center;
+            display: flex;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: (15vw / 3.75);
+            margin: 3vw 0;
+            background-color: #f26522;
+            height: 10vw;
+            justify-content: center;
+            width: 50vw;
+
+            @include tablet {
+              height: (60vw / 7.68);
+              width: 42vw;
+            }
+
+            @include desktop {
+              font-size: (13vw / 19.2) * 1.2;
+              font-weight: 900;
+              height: unset;
+              margin: 0;
+              width: unset;
+            }
+
+            @include biggerDesktop {
+              font-size: (13vw / 19.2);
+            }
+
+            &:hover {
+              color: black;
+              transition: 0.3s;
+            }
+          }
+        }
+      }
+    }
+  }
+}
