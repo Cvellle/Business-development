@@ -19,7 +19,7 @@
 :octocat:
 
 ```
-git clone https://github.com/Cvellle/Music-store.git
+git clone https://github.com/Cvellle/Business-development.git
 ```
 
 ## Terminal instructions
