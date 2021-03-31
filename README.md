@@ -14,7 +14,7 @@
 
 **5.** **semantic HTML**
 
-**6.** **Accessability** ex - tabindex, aria-hidden, aria-label, role
+**6.** **Accessability** - ex. tabindex, aria-hidden, aria-label, role
 
 :octocat:
 
