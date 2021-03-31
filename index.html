@@ -49,28 +49,33 @@
       </button>
       <div class="header__navButtons">
         <div class="header__simpleButtonsDiv">
-          <span class="header__navBtn header__navBtn--1 tabFocus" tabindex="1" role="button"><a role="button"
-              href="#home">HOME</a></span>
-          <span class="header__navBtn header__navBtn--2 tabFocus" tabindex="2" role="button"><a role="button"
-              href="#about">ABOUT</a></span>
-          <span class="header__navBtn header__navBtn--3 tabFocus" tabindex="3" role="button"><a role="button"
-              href="#services">SERVICES</a></span>
-          <span class="header__navBtn header__navBtn--4 tabFocus" tabindex="4" role="button"><a role="button"
-              href="#blog">BLOG</a></span>
-          <span class="header__navBtn header__navBtn--5 tabFocus" tabindex="5" role="button"><a role="button"
-              href="#contact">CONTACT</a></span>
+          <a class="header__navBtn header__navBtn--1 tabFocus" tabindex="0">
+            <span href="#home">HOME</span>
+          </a>
+          <a class="header__navBtn header__navBtn--2 tabFocus" tabindex="0">
+            <span href="#about">ABOUT</span>
+          </a>
+          <a class="header__navBtn header__navBtn--3 tabFocus" tabindex="0">
+            <span href="#services">SERVICES</span>
+          </a>
+          <a class="header__navBtn header__navBtn--4 tabFocus" tabindex="0">
+            <span href="#blog">BLOG</span>
+          </a>
+          <a class="header__navBtn header__navBtn--5 tabFocus" tabindex="0">
+            <span href="#contact">CONTACT</span>
+          </a>
         </div>
-        <button class="header__navBtn header__navBtn--quote tabFocus" tabindex="6">
+        <button class="header__navBtn header__navBtn--quote tabFocus" tabindex="0">
           <a href="#request-quote">REQUEST A QUOTE</a>
         </button>
       </div>
     </nav>
   </header>
-  <main role="main">
+  <main>
     <section class="sliderSection" role="banner">
-      <div class="sliderSection__slider" aria-roledescription="carousel" aria-label="slider">
-        <span class="sliderSection__arrow sliderSection__arrow--left tabFocus" role="button" tabindex="9"></span>
-        <span class="sliderSection__arrow sliderSection__arrow--right tabFocus" role="button" tabindex="10"></span>
+      <div class="sliderSection__slider" aria-label="slider">
+        <span class="sliderSection__arrow sliderSection__arrow--left tabFocus" role="button" tabindex="0"></span>
+        <span class="sliderSection__arrow sliderSection__arrow--right tabFocus" role="button" tabindex="0"></span>
         <div class="sliderSection__imagesContainer">
           <ul class="sliderSection__imagesSlidingRow sliderSection__imagesSlidingRow--position1">
             <figure class="sliderSection__imgWrapper">
@@ -90,10 +95,10 @@
         <nav class="sliderSection__sliderNav" role="navigation">
           <div
             class="sliderSection__sliderBtn sliderSection__sliderBtn--active tabFocus sliderSection__sliderBtn--activeBtn"
-            role="button" tabindex="10"></div>
-          <div class="sliderSection__sliderBtn tabFocus" role="button" tabindex="11"></div>
-          <div class="sliderSection__sliderBtn tabFocus" role="button" tabindex="12"></div>
-          <div class="sliderSection__sliderBtn tabFocus" role="button" tabindex="13"></div>
+            role="button" tabindex="0"></div>
+          <div class="sliderSection__sliderBtn tabFocus" role="button" tabindex="0"></div>
+          <div class="sliderSection__sliderBtn tabFocus" role="button" tabindex="0"></div>
+          <div class="sliderSection__sliderBtn tabFocus" role="button" tabindex="0"></div>
         </nav>
       </div>
       <div class="sliderSection__textDiv">
@@ -107,7 +112,7 @@
           </span>
         </p>
         </p>
-        <button class="sliderSection__btn tabFocus" role="link" tabindex="7">
+        <button class="sliderSection__btn tabFocus" tabindex="0">
           Try Now
         </button>
       </div>
@@ -119,7 +124,7 @@
           <img src="./assets/images/mobile/ourCompanyImg.png" alt="Our Company" />
         </picture>
       </figure>
-      <article class="ourCompany__textDiv" role="article">
+      <article class="ourCompany__textDiv">
         <hgroup class="ourCompany__titlesGroup">
           <h2><span>OUR</span> COMPANY</h2>
           <h3>INNOVATION, PASSION, CREATIVITY,</h3>
@@ -136,7 +141,7 @@
             don't lie. We strive to play it smart amd patient.
           </span>
         </p>
-        <button class="ourCompany__btn tabFocus" role="link" tabindex="14">
+        <button class="ourCompany__btn tabFocus" role="link" tabindex="0">
           READ MORE
         </button>
       </article>
@@ -158,7 +163,7 @@
           </span>
         </h3>
       </hgroup>
-      <article class="ourWork__article ourWork__article--1" role="article">
+      <article class="ourWork__article ourWork__article--1">
         <figure class="ourWork__imageWrapper ourWork__imageWrapper--audience">
           <picture>
             <source srcset="./assets/images/target-audience@1X.png" media="(min-width: 1024px)" />
@@ -170,7 +175,7 @@
           Be patient, but be also very creative and free to invent, to become better.
         </p>
       </article>
-      <article class="ourWork__article ourWork__article--2" role="article">
+      <article class="ourWork__article ourWork__article--2">
         <figure class="ourWork__imageWrapper ourWork__imageWrapper--megaphone">
           <picture>
             <source srcset="./assets/images/megaphone@1X.png" media="(min-width: 1024px)" />
@@ -182,7 +187,7 @@
           Plan more than a half of a time, develop the career with professionsls.
         </p>
       </article>
-      <article class="ourWork__article ourWork__article--3" role="article">
+      <article class="ourWork__article ourWork__article--3">
         <figure class="ourWork__imageWrapper ourWork__imageWrapper--search">
           <picture>
             <source srcset="./assets/images/search@1X.png" media="(min-width: 1024px)" />
@@ -202,7 +207,7 @@
           <img src="./assets/images/mobile/ourHistoryImg@1X.png" alt="Our history" />
         </picture>
       </figure>
-      <article class="ourHistory__textDiv" role="article">
+      <article class="ourHistory__textDiv">
         <hgroup>
           <h2><span>OUR</span> HISTORY</h2>
           <h3>ELEVATE YOUR FINANCIAL PERFORMANCES</h3>
@@ -214,7 +219,7 @@
           become an honorable member of a Word Business Consotium. Nowdays
           our company has offices all across the globe.
         </p>
-        <button class="ourHistory__readMore tabFocus" role="link" tabindex="15">
+        <button class="ourHistory__readMore tabFocus" role="link" tabindex="0">
           READ MORE
         </button>
       </article>
@@ -241,7 +246,7 @@
             guided creativity is a key to every success.
           </p>
         </div>
-        <button class="creativity__readMore tabFocus" role="link" tabindex="16">
+        <button class="creativity__readMore tabFocus" role="link" tabindex="0">
           READ MORE
         </button>
       </div>
@@ -270,7 +275,7 @@
           stakeholder value. From roadmap planning and solution
           implementation, to maintenance and support.
         </p>
-        <button class="computer__btn tabFocus" role="button" tabindex="17">
+        <button class="computer__btn tabFocus" tabindex="0">
           SEE ALL SERVICES
         </button>
       </div>
@@ -298,7 +303,7 @@
         <h5 class="callToAction__text">
           Looking for a First-Class Business Plan Consultant?
         </h5>
-        <button class="callToAction__btn tabFocus" role="link" tabindex="18">
+        <button class="callToAction__btn tabFocus" role="link" tabindex="0">
           Start Now
         </button>
       </div>
@@ -311,8 +316,8 @@
         </hgroup>
         <form class="requestDemo__formEl">
           <input placeholder="Your email" type="email" name="email" class="requestDemo__emailInput tabFocus"
-            tabindex="19" />
-          <input class="requestDemo__btn tabFocus" type="submit" value="GET STARTED" role="button" tabindex="20" />
+            tabindex="0" />
+          <input class="requestDemo__btn tabFocus" type="submit" value="GET STARTED" tabindex="0" />
         </form>
       </div>
     </section>
@@ -329,91 +334,91 @@
               </picture>
             </figure>
             <div class="footer__tel">
-              <a class="tabFocus" href="tel:123456789" role="button" tabindex="21">Tel: (00) 123456789</a>
+              <a class="tabFocus" href="tel:123456789" role="button" tabindex="0">Tel: (00) 123456789</a>
             </div>
             <div class="footer__fax">
-              <a class="tabFocus" href="tel:12345678" role="button" tabindex="22">Fax: (00) 12345678</a>
+              <a class="tabFocus" href="tel:12345678" role="button" tabindex="0">Fax: (00) 12345678</a>
             </div>
-            <address class="footer__email tabFocus" role="button" tabindex="23">
+            <address class="footer__email tabFocus" role="button" tabindex="0">
               info@yourdomain.com
             </address>
           </aside>
           <div class="footer__social">
             <div class="footer__icon footer__icon--linkedIn">
-              <a href="#" class="tabFocus" aria-label="LinkedIn" tabindex="24"></a>
+              <a href="#" class="tabFocus" aria-label="LinkedIn" tabindex="0"></a>
             </div>
             <div class="footer__icon footer__icon--facebook">
-              <a href="#" class="tabFocus" aria-label="Facebook" tabindex="25"></a>
+              <a href="#" class="tabFocus" aria-label="Facebook" tabindex="0"></a>
             </div>
             <div class="footer__icon footer__icon--twitter">
-              <a href="#" class="tabFocus" aria-label="Twitter" tabindex="26"></a>
+              <a href="#" class="tabFocus" aria-label="Twitter" tabindex="0"></a>
             </div>
             <div class="footer__icon footer__icon--github">
-              <a href="#" class="tabFocus" aria-label="Github" tabindex="27"></a>
+              <a href="#" class="tabFocus" aria-label="Github" tabindex="0"></a>
             </div>
           </div>
         </div>
         <div class="footer__colum footer__column--2">
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="28">About us</a>
+            <a href="#" class="tabFocus" tabindex="0">About us</a>
           </span>
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="29">Blog</a>
+            <a href="#" class="tabFocus" tabindex="0">Blog</a>
           </span>
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="30">Our Team</a>
+            <a href="#" class="tabFocus" tabindex="0">Our Team</a>
           </span>
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="31">Developers</a>
+            <a href="#" class="tabFocus" tabindex="0">Developers</a>
           </span>
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="32">CRM Solutions</a>
+            <a href="#" class="tabFocus" tabindex="0">CRM Solutions</a>
           </span>
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="33">Online Help</a>
+            <a href="#" class="tabFocus" tabindex="0">Online Help</a>
           </span>
         </div>
         <div class="footer__colum footer__column--3">
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="34">Services</a>
+            <a href="#" class="tabFocus" tabindex="0">Services</a>
           </span>
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="35">How We Help</a>
+            <a href="#" class="tabFocus" tabindex="0">How We Help</a>
           </span>
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="36">Partners</a>
+            <a href="#" class="tabFocus" tabindex="0">Partners</a>
           </span>
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="37">Where Are We</a>
+            <a href="#" class="tabFocus" tabindex="0">Where Are We</a>
           </span>
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="38">History</a>
+            <a href="#" class="tabFocus" tabindex="0">History</a>
           </span>
         </div>
         <div class="footer__colum footer__column--4">
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="39">Support</a>
+            <a href="#" class="tabFocus" tabindex="0">Support</a>
           </span>
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="40">Privacy Politics</a>
+            <a href="#" class="tabFocus" tabindex="0">Privacy Politics</a>
           </span>
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="41">Support 24/7</a>
+            <a href="#" class="tabFocus" tabindex="0">Support 24/7</a>
           </span>
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="42">Get a Quote</a>
+            <a href="#" class="tabFocus" tabindex="0">Get a Quote</a>
           </span>
           <span class="footer__columnLink">
-            <a href="#" class="tabFocus" tabindex="43">Work With Us</a>
+            <a href="#" class="tabFocus" tabindex="0">Work With Us</a>
           </span>
         </div>
       </div>
     </section>
     <section class="footer__copyrightSection">
       <small class="footer__copyrightText footer__copyrightText--1">
-        <span><a href="#" class="tabFocus" tabindex="44">Privacy</a></span>
-        <span><a href="#" class="tabFocus" tabindex="45">Accessibility</a></span>
-        <span><a href="#" class="tabFocus" tabindex="46">Terms</a></span>
+        <span><a href="#" class="tabFocus" tabindex="0">Privacy</a></span>
+        <span><a href="#" class="tabFocus" tabindex="0">Accessibility</a></span>
+        <span><a href="#" class="tabFocus" tabindex="0">Terms</a></span>
       </small>
       <small class="footer__copyrightText footer__copyrightText--2">&copy; 2020 You Company Copyright</small>
     </section>
