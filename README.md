@@ -1,1 +1,4 @@
-# Great-App-Vega
+Vanila JavaScript
+SCSS
+semantic HTML 
+BEM
