@@ -48,7 +48,7 @@
     justify-content: center;
 
     @include desktop {
-      justify-content: flex-start;
+      justify-content: center;
     }
 
     & h2 {
@@ -58,7 +58,7 @@
       max-width: (190w / 3.75);
 
       @include tablet {
-        font-size: (51.5vw / 7.68) * 0.7; // fits
+        font-size: (51.5vw / 7.68) * 0.7;
         font-weight: 700;
         height: (5vw * 2);
         margin-top: unset;
@@ -67,12 +67,11 @@
       }
 
       @include desktop {
-        font-size: (51.5vw / 19.2); // fits
+        font-size: (51.5vw / 19.2);
         font-weight: 700;
         height: (36vw /19.2);
         margin-top: unset;
-        margin-left: (90% / ($contentWidthDesk * 0.01));
-        justify-content: unset;
+        justify-content: center;
         line-height: 1.875vw;
       }
 
@@ -123,10 +122,10 @@
         height: (49vw / 19.2) * 1.2;
         line-height: ((49vw / 2) / 19.2) * 1.2;
         margin-top: (90% / ($contentWidthDesk * 0.01));
-        margin-left: (70% / ($contentWidthDesk * 0.01));
         margin-bottom: unset;
         min-width: unset;
-        justify-content: unset;
+        justify-content: center;
+        text-align: center;
       }
 
       @include biggerDesktop {
@@ -163,7 +162,7 @@
 
     @include desktop {
       font-size: 0.78vw;
-      flex: 0 (243% / ($contentWidthDesk * 0.01));
+      flex: 0 0 33%;
     }
 
     &--1 {
@@ -187,7 +186,6 @@
 
       @include desktop {
         margin-top: 3.177vw;
-        margin-left: (110% / ($contentWidthDesk * 0.01));
       }
     }
 
@@ -200,7 +198,6 @@
 
       @include desktop {
         margin-top: 3.177vw;
-        margin-left: (108% / ($contentWidthDesk * 0.01));
       }
     }
 
@@ -319,8 +316,8 @@
         line-height: unset;
         height: 3.593vw * 1.2;
         margin-top: (16% / 2.43) * 1.2;
-        max-width: 12.656vw * 1.2;
-        min-width: 115%;
+        max-width: 80%;
+        min-width: 80%;
       }
 
       @include biggerDesktop {
@@ -328,7 +325,8 @@
         height: 3.593vw;
         min-width: unset;
         margin-top: (16% / 2.43);
-        max-width: 12.656vw;
+        max-width: 70%;
+        min-width: 70%;
       }
     }
 

@@ -70,10 +70,11 @@
         }
 
         @include desktop {
-          font-size: (50vw / 19.2); // fits
+          font-size: (50vw / 19.2);
           line-height: 1.875vw;
-          margin-left: ((269%) / ($contentWidthDesk * 0.01));
-          text-align: left;
+          display: flex;
+          justify-content: center;
+          text-align: center;
         }
       }
 
@@ -96,9 +97,9 @@
           height: (16vw / 19.2);
           line-height: (16vw / 19.2);
           margin-top: ((87%) / ($contentWidthDesk * 0.01));
-          margin-left: ((250%) / ($contentWidthDesk * 0.01));
-          max-width: 41.197vw;
-          justify-content: unset;
+          display: flex;
+          justify-content: center;
+          text-align: center;
         }
       }
     }
@@ -179,7 +180,12 @@
     @include desktop {
       font-size: (17vw / 19.2);
       margin-top: ((79%) / ($contentWidthDesk * 0.01));
-      margin-left: ((365%) / ($contentWidthDesk * 0.01));
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1.5vw;
     }
 
     &:hover {

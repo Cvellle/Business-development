@@ -66,17 +66,33 @@
       flex: 0 0 (134vw / 3.75);
       margin-top: (26vw / 3.75);
       transition: 0.3s;
+      position: relative;
 
       @include desktop {
-        height: 1.45vw * 1.2;
+        height: 1.95vw * 1.2;
         flex: 0 0 (269% / 10.98) * 1.2;
-        margin-top: unset;
+        margin-top: 0.5vw;
       }
 
       @include biggerDesktop {
-        height: 1.45vw;
+        height: 1.95vw;
         flex: 0 0 (269% / 10.98);
         margin-top: unset;
+      }
+
+      & picture {
+        max-height: 100%;
+
+        & img {
+          @include desktop {
+            max-height: 100%;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+          }
+        }
       }
 
       &--smaller {
@@ -171,7 +187,7 @@
           cursor: pointer;
           display: flex;
           transition: 0.3s;
-          margin-top: (13% / 8.29) * 1.2;
+          margin-top: (15% / 8.29) * 1.2;
           margin-right: (58% / 8.29);
           width: (432% / 8.29);
         }
