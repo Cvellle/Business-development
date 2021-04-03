@@ -1,7 +1,7 @@
 function mobileNavToggle() {
   const menuIcon = document.querySelector(".header__hamburgerBtn");
   const navigation = document.querySelector(".header__navButtons");
-  const navButtons = document.querySelectorAll(".header__navBtn a");
+  const navButtons = document.querySelectorAll(".header__navBtn");
   const screenWidthLimit = window.matchMedia("screen and (min-width: 1025px)");
 
   if (!screenWidthLimit.matches) {
